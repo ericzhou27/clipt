@@ -231,7 +231,7 @@ class Record extends Component {
         />
 
         <h1
-          className="title"
+          class="title"
           onClick={() => {
             this.setState({
               modalVisible: true,
@@ -241,7 +241,25 @@ class Record extends Component {
           Clipt
         </h1>
 
-        <video id="video-chat" src={this.state.source} autoPlay playsInline />
+        <div
+          class="videoContainer"
+          onClick={() => {
+            this.setState({
+              modalVisible: true,
+            });
+          }}
+        >
+          <video id="video-chat" src={this.state.source} autoPlay playsInline />
+          <div
+            class="overlay"
+            style={{ display: this.state.recording ? "none" : "" }}
+          >
+            <h3>
+              <p>⇧ Shift</p> {" + "} <p>{"<"}</p>
+            </h3>
+            <h3>Start Recording</h3>
+          </div>
+        </div>
 
         <div className="diagonal-box-2" />
         <div className="diagonal-box" />
